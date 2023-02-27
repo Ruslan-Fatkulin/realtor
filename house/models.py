@@ -65,6 +65,7 @@ class House(Model):
     living_space = IntegerField(null=True)
     location = CharField(max_length=20, choices=Location)
     convenience = TextField(null=True)
+    date_added = DateTimeField(null=True, auto_now_add=True)
 
     def __str__(self):
         return self.title

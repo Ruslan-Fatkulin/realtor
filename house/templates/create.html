@@ -2,20 +2,21 @@
 {% block content %}
     <div class="form">
         <form method="post" enctype="multipart/form-data" action="">
-            <div>
-                {% csrf_token %}
-                {% for a in form2 %}
-                    <a href="">{{ a }}</a>
-                {% endfor %}
-            </div>
-            <div style="display: flex;justify-content:center;height: 100px;width: 95%;margin-bottom: 20px;margin-top: 20px">
-                <div style="">
-                    {{ form.type }}
-
-                </div>
-            </div>
+            {% csrf_token %}
             <div style="display: flex;justify-content:space-evenly;align-items: center">
                 <div style="width: 45%;align-items: center">
+                    <label for="" class="label-create">
+                        Выберите фото
+                    </label>
+                    <input class="modal-btn" type="checkbox" id="modal-btn" name="modal-btn"/>
+                    <label for="modal-btn">Выбрать</label>
+                    <div class="modal">
+                        <div class="modal-wrap">
+                            {% for a in form2 %}
+                                <a class="modal-item" href="">{{ a }}</a>
+                            {% endfor %}
+                        </div>
+                    </div>
                     <div class="input-box">
                         <label class="label-create"
                                for="">
@@ -69,6 +70,10 @@
                     </div>
                 </div>
                 <div style="width: 45%;align-items: center">
+                    <label for="" class="label-create">
+                        Выберите тип жилья
+                    </label>
+                        {{ form.type }}
                     <div class="input-box">
                         <label for="" class="label-create">
                             Тип материала

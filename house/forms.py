@@ -51,11 +51,11 @@ class HouseForm(forms.ModelForm):
 
 
 class CustomFileField(forms.FileInput):
-    pass
+    template_name = 'file.html'
 
 
 class ImageForm(forms.ModelForm):
-    image1 = forms.ImageField()
+    image1 = forms.ImageField(widget=CustomFileField())
     image2 = forms.ImageField()
     image3 = forms.ImageField()
     image4 = forms.ImageField()

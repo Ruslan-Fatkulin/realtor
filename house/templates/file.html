@@ -1,0 +1,14 @@
+<div class="modal-item">
+    <label class="label-create">
+        <input style="border: none;width: 100%" type="{{ widget.type }}" class="input" name="{{ widget.name }}"
+                {% if widget.value != None %}
+               value="{{ widget.value|stringformat:'s' }}"
+                {% endif %}
+                {% include "django/forms/widgets/attrs.html" %}>
+        <span class="file-box">
+               <span class="label-create">
+                   Choose a file…
+               </span>
+           </span>
+    </label>
+</div>
