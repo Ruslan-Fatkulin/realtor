@@ -1,0 +1,22 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="{% static 'main.css' %}">
+</head>
+<body>
+<nav class="navbar">
+    <a href="" class="nav-item">Home</a>
+    <a href="{% url 'nedviga:create' %}" class="nav-item">Create</a>
+    <a href="" class="nav-item">Sign in</a>
+    <a href="" class="nav-item">Sign Out</a>
+</nav>
+<div>
+    {% block content %}
+    {% endblock %}
+</div>
+<script src="{% static 'select.js' %}"></script>
+</body>
+</html>
