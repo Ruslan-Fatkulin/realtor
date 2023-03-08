@@ -1,16 +1,18 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@402&display=swap');
+
 body {
     padding: 0px;
     margin: 0px;
-
+    font-family: 'Nunito', sans-serif;
 }
 
 * {
-    font-family: sans-serif;
+    font-family: 'Nunito', sans-serif;
 }
 
 .navbar {
     width: 100%;
-    height: 70px;
+    height: 100px;
     display: flex;
     justify-content: space-evenly;
     align-items: center;
@@ -20,44 +22,24 @@ body {
     text-decoration: none;
     color: black;
     font-size: 30px;
-    font-weight: 900;
-    font-family: sans-serif;
-}
 
-.nav-item:hover {
-    color: grey;
-    text-decoration: underline;
-    transition: 0.5s;
-}
-
-.form {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    background: black;
 }
 
 .input {
     width: 100%;
     height: 40px;
-    border: none;
+    border: 1px solid black;
     margin-top: 20px;
     margin-bottom: 20px;
     border-radius: 5px;
-    background: grey;
-    font-weight: 900;
+
 }
 
 .input:focus {
     outline: none;
-    height: 50px;
     font-size: 25px;
-    width: 100%;
-    transition: all 0.2s linear;
-    background: #ffffff;
     font-weight: 900;
-
+    background: white;
 
 }
 
@@ -70,7 +52,7 @@ body {
 }
 
 textarea {
-    background: grey;
+    border: 1px solid black;
     resize: none;
     border-radius: 5px;
     width: 100%;
@@ -80,20 +62,20 @@ textarea {
 textarea:focus {
     outline: none;
     transition: all 0.2s linear;
-    background: #ffffff;
+
 }
 
 select {
     width: 100%;
     height: 40px;
     border: none;
-    border-bottom: 1px solid black;
     margin-top: 20px;
     margin-bottom: 20px;
     border-radius: 5px;
-    background: grey;
+    background: white;
     font-weight: 900;
-    color: white
+    color: black;
+    border: 1px solid black;
 }
 
 select:focus {
@@ -116,18 +98,16 @@ select:focus {
     width: 100%;
     height: 40px;
     border: none;
-    border-bottom: 1px solid black;
     margin-top: 20px;
     margin-bottom: 20px;
     border-radius: 5px;
-    background: grey;
+    border: 1px solid black;
 }
 
 .label-create {
     font-size: 15px;
     font-weight: 900;
-    font-family: sans-serif;
-    color: white;
+    color: black;
 }
 
 [type="checkbox"]:checked,
@@ -140,15 +120,12 @@ select:focus {
 .modal-btn:not(:checked) + label {
     width: 100%;
     height: 40px;
-    border: none;
-    border-bottom: 1px solid black;
     margin-top: 20px;
     margin-bottom: 20px;
     border-radius: 5px;
-    background: grey;
+    border: 1px solid black;
     font-weight: 900;
     position: relative;
-    font-family: 'Poppins', sans-serif;
     font-size: 15px;
     line-height: 2;
     transition: all 200ms linear;
@@ -170,12 +147,11 @@ select:focus {
     align-self: center;
     border: none;
     cursor: pointer;
-    background: grey;
-    box-shadow: 0 12px 35px 0 rgba(16, 39, 112, .25);
+    border: 1px solid black;
 }
 
 .modal-btn:not(:checked) + label:hover {
-    background-color:white;
+    background-color: white;
     color: #102770;
 }
 
@@ -199,7 +175,6 @@ select:focus {
     font-size: 18px;
     background-color: #ffeba7;
     color: #102770;
-    font-family: 'unicons';
     content: '\eac6';
     box-shadow: 0 12px 25px 0 rgba(16, 39, 112, .25);
     transition: all 200ms linear;
@@ -208,11 +183,6 @@ select:focus {
     transform: translateY(20px);
 }
 
-.modal-btn:checked + label:hover:after,
-.modal-btn:not(:checked) + label:hover:after {
-    background-color: #102770;
-    color: #ffeba7;
-}
 
 .modal-btn:checked + label:after {
     transition: opacity 300ms 300ms ease, transform 300ms 300ms ease, background-color 250ms linear, color 250ms linear;
@@ -276,40 +246,186 @@ select:focus {
     transform: scale(1);
     transition: opacity 250ms 500ms ease, transform 350ms 500ms ease;
 }
+
 .section {
     padding: 20px;
     display: flex;
     justify-content: space-evenly;
     flex-wrap: wrap;
-    background: #bbc6c8;
 }
-.house-card{
+
+.house-card {
     width: 30%;
-    height: 450px;
+    height: 500px;
+    border-radius: 15px;
     background: white;
     margin-top: 20px;
+    -webkit-box-shadow: 0px 0px 28px -7px rgba(0, 0, 0, 0.4);
+    -moz-box-shadow: 0px 0px 28px -7px rgba(0, 0, 0, 0.4);
+    box-shadow: 0px 0px 28px -7px rgba(0, 0, 0, 0.4);
 }
-.image{
+
+.image {
     width: 100%;
+
 }
-.house-header{
-    font-family: sans-serif;
+
+.house-header {
     font-size: 30px;
     font-weight: 900;
     text-align: center;
 }
-.house-bio{
-    font-family: sans-serif;
+
+.house-bio {
     font-size: 20px;
     font-weight: 900;
 }
+
 .house-price {
-    font-family: sans-serif;
     font-size: 20px;
     font-weight: 900;
-    color:#5ba199;
+    color: #5ba199;
 }
+
 a {
     text-decoration: none;
-    color:black;
+    color: black;
+}
+
+.slideshow-container {
+    width: 70%;
+    position: relative;
+
+
+}
+
+/* Hide the images by default */
+.mySlides {
+    display: none;
+}
+
+.mySlides img {
+    width: 100%;
+    border-radius: 15px;
+
+}
+
+/* Next & previous buttons */
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-top: -22px;
+    padding: 16px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    user-select: none;
+    background: black;
+    opacity: 70%;
+    text-align: center;
+    line-height: 50px;
+}
+
+/* Position the "next button" to the right */
+.next {
+    right: 0;
+}
+
+.dot {
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+    background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+
+@keyframes fade {
+    from {
+        opacity: .4
+    }
+    to {
+        opacity: 1
+    }
+}
+
+.title {
+    font-size: 35px;
+    font-weight: 900;
+    text-align: center;
+    display: block;
+    width: 100%;
+}
+
+.form-button {
+    border: none;
+    outline: none;
+    width: 100%;
+    height: 40px;
+    border-radius: 5px;
+    background: #ddbeaa;
+    margin-left: auto;
+
+
+}
+
+.pp {
+    font-size: 25px;
+
+}
+
+.form-login {
+    margin-top: 20px;
+    width: 50%;
+    height: auto;
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0px 0px 30px grey;
+    /*border: 1px solid black;*/
+    /*background: #bbc6c8;*/
+    flex-wrap: wrap;
+    text-align: center;
+
+}
+
+.form-login input {
+    width: 70%;
+}
+
+.login-bt {
+    width: 70%;
+    height: 40px;
+    background: #ddbeaa;
+    color: white;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.section1 {
+    width: 100%;
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-wrap: wrap
 }

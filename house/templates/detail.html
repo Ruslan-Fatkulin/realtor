@@ -4,4 +4,63 @@
 {% endblock %}
 {% block content %}
     <h1>{{ house.title }}</h1>
+    <div style="display:flex;justify-content: center">
+    <div class="slideshow-container">
+        {% for image in images %}
+            <div class="mySlides fade">
+                <img src="{{ image.image1.url }}" alt="">
+            </div>
+            <div class="mySlides fade">
+                <img src="{{ image.image2.url }}" alt="">
+            </div>
+            <div class="mySlides fade">
+                <img src="{{ image.image3.url }}" alt="">
+            </div>
+            <div class="mySlides fade">
+                <img src="{{ image.image4.url }}" alt="">
+            </div>
+            <div class="mySlides fade">
+                <img src="{{ image.image5.url }}" alt="">
+            </div>
+            <div class="mySlides fade">
+                <img src="{{ image.image5.url }}" alt="">
+            </div>
+            <div class="mySlides fade">
+                <img src="{{ image.image6.url }}" alt="">
+            </div>
+            <div class="mySlides fade">
+                <img src="{{ image.image7.url }}" alt="">
+            </div>
+            <div class="mySlides fade">
+                <img src="{{ image.image8.url }}" alt="">
+            </div>
+            <div class="mySlides fade">
+                <img src="{{ image.image9.url }}" alt="">
+            </div>
+            <div class="mySlides fade">
+                <img src="{{ image.image10.url }}" alt="">
+            </div>
+            <div class="mySlides fade">
+                <img src="{{ image.image11.url }}" alt="">
+            </div>
+            <div class="mySlides fade">
+                <img src="{{ image.image12.url }}" alt="">
+            </div>
+            <div class="mySlides fade">
+                <img src="{{ image.image13.url }}" alt="">
+            </div>
+            <div class="mySlides fade">
+                <img src="{{ image.image14.url }}" alt="">
+            </div>
+            <div class="mySlides fade">
+                <img src="{{ image.image15.url }}" alt="">
+            </div>
+            <div class="mySlides fade">
+                <img src="{{ image.image16.url }}" alt="">
+            </div>
+        {% endfor %}
+    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+  <a class="next" onclick="plusSlides(1)">&#10095;</a>
+    </div>
+    </div>
 {% endblock %}
