@@ -1,0 +1,9 @@
+<input class="modal-btn" type="checkbox" id="modal-btn" name="modal-btn"/>
+<label for="modal-btn">Выбрать</label>
+<div class="modal">
+    <div class="modal-wrap">
+        {% for a in type %}
+            <a class="modal-item" href="{% url 'house:home' %}?type={{ a }}">{{ a }}</a>
+        {% endfor %}
+    </div>
+</div>

@@ -1,27 +1,13 @@
 {% extends 'base.html' %}
 {% block content %}
-    <div class="form" style="padding: 20px">
-        <form method="post" action="">
+        <form class="form"  method="post" action="">
             {% csrf_token %}
-            <div class="input-box">
-                <label for="" class="label-create">
-                    Тип строения
-                </label>
-                {{ form.building_type }}
+            {% for field in form %}
+            <div class="field">
+                <label for="{{ field.id_for_label }}">{{ field.label }}</label>
+                {{ field }}
             </div>
-            <div class="input-box">
-                <label for="" class="label-create">
-                    На каком этаже
-                </label>
-                {{ form.floor }}
-            </div>
-            <div class="input-box">
-                <label for="" class="label-create">
-                    Количество этажей
-                </label>
-                {{ form.storeys }}
-            </div>
-            <button class="form-button" type="submit">Создать</button>
+            {% endfor %}
+        <button class="button" type="submit">Создать</button>
         </form>
-    </div>
 {% endblock %}

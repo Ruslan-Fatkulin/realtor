@@ -69,7 +69,7 @@ class House(Model):
     date_added = DateTimeField(null=True, auto_now_add=True)
 
     def __str__(self):
-        return self.title
+        return self.pk
 
 
 class Image(Model):

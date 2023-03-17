@@ -5,20 +5,32 @@
 {% endblock %}
 {% block content %}
     <div id="login" class="section1">
+        {{ user_form.non_field_errors }}
+        {{ profile_form.non_field_errors }}
         <div class="section1">
             <div class="title">Зарегистрироваться</div>
-            <form method="post" class="form-login" action="">
+            <form method="post" class="form-login" enctype="multipart/form-data" action="">
                 {% csrf_token %}
                 <div class="input-box">
                     <label for="">Придумайте никнейм</label> <br>
+                    {% if errors %}
+                    {{ user_form.username.errors }}
+                    {% endif %}
                     {{ user_form.username }}
                 </div>
                 <div class="input-box">
                     <label for="">Придумайте пароль</label> <br>
+                    {% if errors %}
+                        {{ user_form.password1.errors }}
+                    {% endif %}
                     {{ user_form.password1 }}
                 </div>
                 <div class="input-box">
-                    <label for="">Повторите ваш никнейм</label> <br>
+                    <label for="">Повторите ваш пароль</label> <br>
+                    {% if errors %}
+                        {{ user_form.password2.errors }}
+                    {% endif %}
+
                     {{ user_form.password2 }}
                 </div>
                 <div class="input-box">
@@ -30,7 +42,7 @@
                     {{ profile_form.avatar }}
                 </div>
                 <button class="login-bt" type="submit">Создать аккаунт</button>
-{#                <a class="login-bt" href="{% url 'social:begin' 'facebook' %}">Войти через Facebook</a>#}
+                {#                <a class="login-bt" href="{% url 'social:begin' 'facebook' %}">Войти через Facebook</a>#}
             </form>
         </div>
     </div>

@@ -5,17 +5,25 @@
 {% endblock %}
 {% block content %}
     <div id="login" class="section1">
-        <div class="title">Вход</div>
+
+        <div class="title">Вход <br>
+        </div>
         <div style="display: flex; justify-content: center;width: 100%">
+
             <form method="post" class="form-login" action="">
                 {% csrf_token %}
                 <div class="input-box">
                     <label for="">Введите ваш никнейм</label> <br>
                     {{ form.username }}
+
                 </div>
                 <div class="input-box">
-                    <label for="">Введите ваш пароль</label> <br>
+                    <label for="">Введите ваш пароль
+                    </label> <br>
                     {{ form.password }}
+                    <h1>
+
+                    </h1>
                 </div>
                 <button class="login-bt" type="submit">Войти</button>
             </form>
