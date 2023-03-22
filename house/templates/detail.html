@@ -3,64 +3,121 @@
     {{ house.title }}
 {% endblock %}
 {% block content %}
-    <h1>{{ house.title }}</h1>
-    <div style="display:flex;justify-content: center">
-    <div class="slideshow-container">
-        {% for image in images %}
-            <div class="mySlides fade">
-                <img src="{{ image.image1.url }}" alt="">
+    <div class="section">
+        <h1 class="title is-1 text-centered">{{ house.title }}</h1>
+        <div class="slideshow-container">
+            {% for image in images %}
+                <div class="mySlides fade">
+                    <img class="imgs" src="{{ image.image1.url }}" alt="">
+                </div>
+                <div class="mySlides fade">
+                    <img class="imgs" src="{{ image.image2.url }}" alt="">
+                </div>
+                <div class="mySlides fade">
+                    <img class="imgs" src="{{ image.image3.url }}" alt="">
+                </div>
+                <div class="mySlides fade">
+                    <img class="imgs" src="{{ image.image4.url }}" alt="">
+                </div>
+                <div class="mySlides fade">
+                    <img class="imgs" src="{{ image.image5.url }}" alt="">
+                </div>
+                <div class="mySlides fade">
+                    <img class="imgs" src="{{ image.image5.url }}" alt="">
+                </div>
+                <div class="mySlides fade">
+                    <img class="imgs" src="{{ image.image6.url }}" alt="">
+                </div>
+                <div class="mySlides fade">
+                    <img class="imgs" src="{{ image.image7.url }}" alt="">
+                </div>
+                <div class="mySlides fade">
+                    <img class="imgs" src="{{ image.image8.url }}" alt="">
+                </div>
+                <div class="mySlides fade">
+                    <img class="imgs" src="{{ image.image9.url }}" alt="">
+                </div>
+                <div class="mySlides fade">
+                    <img class="imgs" src="{{ image.image10.url }}" alt="">
+                </div>
+                <div class="mySlides fade">
+                    <img class="imgs" src="{{ image.image11.url }}" alt="">
+                </div>
+                <div class="mySlides fade">
+                    <img class="imgs" src="{{ image.image12.url }}" alt="">
+                </div>
+                <div class="mySlides fade">
+                    <img class="imgs" src="{{ image.image13.url }}" alt="">
+                </div>
+                <div class="mySlides fade">
+                    <img class="imgs" src="{{ image.image14.url }}" alt="">
+                </div>
+                <div class="mySlides fade">
+                    <img class="imgs" src="{{ image.image15.url }}" alt="">
+                </div>
+                <div class="mySlides fade">
+                    <img class="imgs" src="{{ image.image16.url }}" alt="">
+                </div>
+            {% endfor %}
+            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+            <a class="next" onclick="plusSlides(1)">&#10095;</a>
+        </div>
+        <div class="about">
+            <div class="border">
+                Тип жилья: {{ house.type }}
             </div>
-            <div class="mySlides fade">
-                <img src="{{ image.image2.url }}" alt="">
+            <div class="border">
+                Цена: {{ house.price }}
             </div>
-            <div class="mySlides fade">
-                <img src="{{ image.image3.url }}" alt="">
+            <div class="border">
+                Размер дома: {{ house.size }}
             </div>
-            <div class="mySlides fade">
-                <img src="{{ image.image4.url }}" alt="">
+            <div class="border">
+                Материал: {{ house.material }}
             </div>
-            <div class="mySlides fade">
-                <img src="{{ image.image5.url }}" alt="">
+            <div class="border">
+                Количество комнат: {{ house.rooms }}
             </div>
-            <div class="mySlides fade">
-                <img src="{{ image.image5.url }}" alt="">
+            <div class="border">
+                Мебилизация: {{ house.furniture }}
             </div>
-            <div class="mySlides fade">
-                <img src="{{ image.image6.url }}" alt="">
+            <div class="border">
+                Ремонт: {{ house.repair }}
             </div>
-            <div class="mySlides fade">
-                <img src="{{ image.image7.url }}" alt="">
+            <div class="border">
+                Дата постройки: {{ house.date_of_building }}
             </div>
-            <div class="mySlides fade">
-                <img src="{{ image.image8.url }}" alt="">
+            <div class="border">
+                Поблизости: {{ house.near }}
             </div>
-            <div class="mySlides fade">
-                <img src="{{ image.image9.url }}" alt="">
-            </div>
-            <div class="mySlides fade">
-                <img src="{{ image.image10.url }}" alt="">
-            </div>
-            <div class="mySlides fade">
-                <img src="{{ image.image11.url }}" alt="">
-            </div>
-            <div class="mySlides fade">
-                <img src="{{ image.image12.url }}" alt="">
-            </div>
-            <div class="mySlides fade">
-                <img src="{{ image.image13.url }}" alt="">
-            </div>
-            <div class="mySlides fade">
-                <img src="{{ image.image14.url }}" alt="">
-            </div>
-            <div class="mySlides fade">
-                <img src="{{ image.image15.url }}" alt="">
-            </div>
-            <div class="mySlides fade">
-                <img src="{{ image.image16.url }}" alt="">
-            </div>
-        {% endfor %}
-    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-  <a class="next" onclick="plusSlides(1)">&#10095;</a>
-    </div>
+
+            {% if house.type == 'квартира' %}
+                <div class="border">
+                    Этаж: {{ house.floor }}
+                </div>
+                <div class="border">
+                    Этажность дома: {{ house.storeys }}
+                </div>
+                <div class="border">
+                    Тип строения: {{ house.building_type }}
+                </div>
+            {% endif %}
+            {% if house.type == 'дом' %}
+                <div class="border">
+                    Жилая площадь: {{ house.living_space }}
+                </div>
+                <div class="border">
+                    Местонахождение: {{ house.location }}
+                </div>
+                <div class="border">
+                    Удобства: {{ house.convenience }}
+                </div>
+            {% endif %}
+        </div>
+        <div class="title is-1">Описание</div>
+        <br>
+        <div class="desk">
+            {{ house.bio }}
+        </div>
     </div>
 {% endblock %}

@@ -44,32 +44,35 @@ Location = [
 
 
 class House(Model):
-    type = CharField(max_length=25, choices=Type_choise)
+    type = CharField(max_length=25, choices=Type_choise, null=True)
     title = CharField(max_length=255)
     bio = TextField()
     address = CharField(max_length=255)
     preview = ImageField(null=True, blank=True)
     price = IntegerField()
     size = IntegerField()
-    material = CharField(max_length=255, choices=Material_choise)
+    material = CharField(max_length=255, choices=Material_choise, null=True)
     rooms = IntegerField()
-    furniture = CharField(max_length=20, choices=Furniture)
-    repair = CharField(max_length=20, choices=Repair)
+    furniture = CharField(max_length=20, choices=Furniture, null=True)
+    repair = CharField(max_length=20, choices=Repair, null=True)
     near = TextField(null=True, blank=True)
     date_of_building = IntegerField(max_length=4, null=True, blank=True)
     seller = ForeignKey(User, on_delete=CASCADE, null=True)
     #################
     floor = IntegerField(null=True, blank=True)
     storeys = IntegerField(null=True, blank=True)
-    building_type = CharField(max_length=20, choices=Building_type)
+    building_type = CharField(max_length=20, choices=Building_type, null=True)
     #################
     living_space = IntegerField(null=True)
-    location = CharField(max_length=20, choices=Location)
+    location = CharField(max_length=20, choices=Location, null=True)
     convenience = TextField(null=True)
     date_added = DateTimeField(null=True, auto_now_add=True)
 
     def __str__(self):
-        return self.pk
+        return str(self.pk)
+
+    def home_title(self):
+        return self.title[:20]
 
 
 class Image(Model):

@@ -6,7 +6,7 @@ class BaseForm(forms.ModelForm):
     type = forms.ChoiceField(choices=Type_choise, label='Выберите тип дома')
     title = forms.CharField(widget=forms.TextInput(attrs={'class': 'input'}), label='Введите заголовок')
     bio = forms.CharField(widget=forms.Textarea(), label='Опишите ваш дом')
-    preview = forms.ImageField(widget=forms.FileInput(attrs={'class': 'input'}),label='Главное фото')
+    preview = forms.ImageField(widget=forms.FileInput(attrs={'class': 'input'}), label='Главное фото')
     address = forms.CharField(widget=forms.TextInput(attrs={'class': 'input'}), label='Введите адрес')
     price = forms.IntegerField(widget=forms.NumberInput(attrs={'class': 'input has-text-centered'}), label='Цена')
     size = forms.IntegerField(widget=forms.NumberInput(attrs={'class': 'input has-text-centered'}), label='Размер')
@@ -18,8 +18,8 @@ class BaseForm(forms.ModelForm):
     repair = forms.ChoiceField(choices=Repair, label='Тип ремонта')
     near = forms.CharField(widget=forms.Textarea(), label='Что есть рядом')
     date_of_building = forms.IntegerField(
-        widget=forms.NumberInput(attrs={'class': 'input has-text-centered', 'maxlength': '4',
-                                        'oninput': 'javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength)'}), label='Дата постройки')
+        widget=forms.NumberInput(attrs={'maxlength': '4','oninput': 'javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength)'}),
+        label='Дата постройки')
 
     class Meta:
         model = House

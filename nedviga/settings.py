@@ -76,15 +76,14 @@ WSGI_APPLICATION = 'nedviga.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
-
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'nedviga',
         'USER': 'postgres',
         'PASSWORD': 'FORTA',
+        'PASSWORD': 'FORTA',
         'HOST': 'localhost',
-        'PORT': '5432',
     }
 }
 
