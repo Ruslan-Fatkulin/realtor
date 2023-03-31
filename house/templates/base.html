@@ -24,16 +24,10 @@
         <a href="{% url 'auth:login' %}" class="nav-item">Войти</a>
     {% endif %}
 </nav>
-<div class="columns">
-    <div class="add"></div>
-    <div style="width: 60%;">
-        {% block content %}
-        {% endblock %}
-        {% block script %}
-        {% endblock %}
-    </div>
-    <div class="add"></div>
-</div>
+{% block content %}
+{% endblock %}
+{% block script %}
+{% endblock %}
 <script src="{% static 'carousel.js' %}"></script>
 <script src="{% static 'select.js' %}"></script>
 </body>

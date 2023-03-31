@@ -82,7 +82,6 @@ DATABASES = {
         'NAME': 'nedviga',
         'USER': 'postgres',
         'PASSWORD': 'FORTA',
-        'PASSWORD': 'FORTA',
         'HOST': 'localhost',
     }
 }

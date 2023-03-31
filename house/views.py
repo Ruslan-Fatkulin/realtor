@@ -11,7 +11,6 @@ def home(request):
 
 @login_required(login_url='/auth/login/')
 def create(request):
-    types = Type_choise()
     form = BaseForm(request.POST, request.FILES)
     image_form = ImageForm(request.POST, request.FILES)
     if request.method == 'POST':
@@ -25,7 +24,7 @@ def create(request):
             return redirect('house:create_apartment', dom.pk)
         if dom.type == 'дом':
             return redirect('house:create_house', dom.pk)
-    return render(request, 'create.html', {'form': form, 'form2': image_form, 'types':types})
+    return render(request, 'create.html', {'form': form, 'form2': image_form})
 
 
 def create_apartment(request, pk):
