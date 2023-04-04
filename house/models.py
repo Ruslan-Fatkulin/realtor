@@ -119,3 +119,25 @@ class Image(Model):
 
     def __str__(self):
         return str(self.house)
+
+
+class Message(Model):
+    text = CharField(max_length=100000)
+    sender = ForeignKey(User, on_delete=CASCADE,related_name='sender')
+    receiver = ForeignKey(User, on_delete=CASCADE,related_name='receiver')
+    time = DateTimeField(auto_now_add=True)
+    house = ForeignKey(House, on_delete=CASCADE, null=True)
+    chat = ForeignKey('house.Chat', on_delete=CASCADE, null=True)
+
+    def __str__(self):
+        return self.text[:20]
+
+
+class Chat(Model):
+    sender = ForeignKey(User, on_delete=CASCADE, related_name='sender1')
+    receiver = ForeignKey(User, on_delete=CASCADE, related_name='receiver1')
+    time = DateTimeField(auto_now_add=True)
+    house = ForeignKey(House, on_delete=CASCADE, null=True)
+
+    def __str__(self):
+        return str(self.pk)

@@ -48,4 +48,30 @@ def create_house(request, pk):
 def detail(request, pk):
     house = House.objects.get(pk=pk)
     images = Image.objects.filter(house=house)
-    return render(request, 'detail.html', {'house': house, 'images': images})
+    receiver = house.seller
+    sender = request.user
+    form = MessageForm(request.POST)
+    if request.method == 'POST' and form.is_valid():
+        chat = Chat.objects.create(sender=sender, receiver=receiver, house=house)
+        message = Message.objects.create(sender=sender, house=house, receiver=receiver, chat=chat, **form.cleaned_data)
+        return redirect('house:detail', house.pk)
+    return render(request, 'detail.html', {'house': house, 'images': images, 'form': form})
+
+
+
+
+def chat(request, pk):
+    chat = Chat.objects.get(pk=pk)
+    sender = request.user
+    receiver = chat.receiver
+    form = MessageForm(request.POST)
+    if request.method == 'POST' and form.is_valid():
+        message = Message.objects.create(sender=sender, receiver=receiver,chat=chat, **form.cleaned_data)
+        return redirect('house:chat', chat.pk)
+    messages = Message.objects.filter(chat=chat)
+    return render(request, 'chat.html', {'form': form,'messages':messages})
+
+
+def chats(request):
+    chats = Chat.objects.filter(sender=request.user,) | Chat.objects.filter(receiver=request.user)
+    return render(request, 'chats.html', {'chats': chats})

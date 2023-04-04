@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block content %}
+{% for chat in chats %}
+    <div style="border: 1px solid black">
+    <a href="{% url 'house:chat' chat.pk %}">
+        <h1>{{ chat.house }}</h1>
+        <h1>{{ chat.sender }}</h1>
+        <h1>{{ chat.receiver }}</h1>
+    </a>
+    </div>
+{% endfor %}
+
+{% endblock %}
